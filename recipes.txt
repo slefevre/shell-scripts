@@ -1,0 +1,28 @@
+// erase drive
+fdisk -l // identify device
+dd if=/dev/urandom of=/dev/sdN bs=4096
+
+// rsync
+rsync -cavszP --progress user@remote:path/to/*files* /home/user/local/path
+
+# shows disks device name
+$> sudo fdisk -l
+$> sudo mkdir /media/usb
+$> mount /dev/sdb1 /media/usb
+
+// format html with indentation
+tidy -indent --wrap 0 --vertical-space no --show-warnings no file.html > output-file.html
+
+// show mysql queries realtime
+watch 'mysqladmin proc'
+
+// find the 10 largest files
+du -hsx * | sort -rh | head -10
+
+// bash sequence with zero-padded strings
+// 00010 - 00015
+for i in $(seq -f "%05g" 10 15); do echo $i; done
+
+// rtf to txt
+unrtf
+ls-dotfiles='ls -d .!(|.)'
