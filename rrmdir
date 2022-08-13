@@ -2,4 +2,4 @@
 
 # recursively delete empty directories
 
-find . -type d -empty -exec rmdir {} \;
+find $1 -type d -empty -exec rmdir {} \;
