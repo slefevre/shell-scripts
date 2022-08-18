@@ -1,3 +1,4 @@
 #!/bin/bash
 
 fdupes -r . > ./dupes.txt
+cat ./dupes.txt
