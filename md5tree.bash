@@ -1,3 +1,3 @@
 #!/bin/bash
-
-find . -type f  -exec md5sum {} \; | sort > ./files.md5sums
+path=$(pwd | sed -e 's/\//-/g' | cut -c2- );
+find . -type f  -exec md5sum {} \; | sort > "./${path}files.md5sums"
