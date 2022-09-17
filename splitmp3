@@ -3,7 +3,7 @@
 FILE=$1;
 BASENAME="$(basename "$1" .mp3)"
 ROOTDIR="";
-if [ $# -eq 2 ]; then 
+if [ $# -eq 2 ]; then
   if [ ! -d "$2" ]; then
     echo "The second argument should be a valid directory."
     exit 0;
@@ -14,4 +14,4 @@ fi
 
 set -x
 # mp3splt -a -t {mm}.{ss} -o {split-filename}-@n -d {directory} {filename.mp3}
-mp3splt -a -t 15.0 -o @n" $BASENAME" -d "$ROOTDIR$BASENAME" "$FILE";
+mp3splt -m "$BASENAME.m3u" -a -t 15.0 -o "$BASENAME.@n" -d "$ROOTDIR$BASENAME" "$FILE";
