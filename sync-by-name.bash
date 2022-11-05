@@ -10,5 +10,7 @@ set +x
 find "$1" -type f -exec sh -c '
   for file do
     echo "$file"
+    DIR="$(dirname "${file}")" ; FILE="$(basename "${file}")"
+    echo "[${DIR}] [${FILE}]"
   done
 ' exec-sh {} +
