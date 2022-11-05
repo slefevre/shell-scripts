@@ -5,4 +5,10 @@ set +x
 
 ## find all files in the directory
 
-find "$1" -type f -print
+# https://unix.stackexchange.com/a/9499/394
+
+find "$1" -type f -exec sh -c '
+  for file do
+    echo "$file"
+  done
+' exec-sh {} +
