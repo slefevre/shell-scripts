@@ -19,6 +19,7 @@ FILESB=();
 # find all files in the source dir (A)
 # https://unix.stackexchange.com/a/9499/394
 while IFS=  read -r -d $'\0'; do
+    echo $REPLY | tr '\0' '\n'  ;
     FILESA+=("$REPLY")
 done < <(find . -print0)
 
