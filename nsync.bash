@@ -2,19 +2,6 @@
 
 set +x
 
-# find all files in the source dir (A)
-# https://unix.stackexchange.com/a/9499/394
-while IFS=  read -r -d $'\0'; do
-    FILESA+=("$REPLY")
-done < <(find . -name "${input}" -print0)
-
-for FILEA in ${iFILESA[@]}; do
-  echo $FILEA;
-done
-
-# get B files
-
-
 # each A file:
 # if not B
 #   if not in B
@@ -29,16 +16,17 @@ done
 FILESA=();
 FILESB=();
 
-
-find $1 -type f
-
-# Find all files in source (A)
-https://stackoverflow.com/a/23357277
+# find all files in the source dir (A)
+# https://unix.stackexchange.com/a/9499/394
 while IFS=  read -r -d $'\0'; do
-    array+=("$REPLY")
-done < <(find . -name "${input}" -print0)
+    FILESA+=("$REPLY")
+done < <(find . -print0)
 
-return 0;
+for FILEA in ${FILESA[@]}; do
+  echo $FILEA;
+done
+
+exit 0;
 
 find . *jonathan86* -type f -exec sh -c '
   i = 0;
