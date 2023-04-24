@@ -8,3 +8,14 @@ fi
 
 SRC=$(md5tree $1);
 DST=$(md5tree $2);
+
+if [[ ! -d $1 ]]; then
+  echo "Error: $1 is not an (accessible) directory."
+  exit 1;
+fi
+
+if [[ ! -d $2 ]]; then
+  echo "Error: $2 is not an (accessible) directory."
+  exit 1;
+fi
+
