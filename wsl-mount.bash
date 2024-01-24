@@ -12,8 +12,7 @@ if [ -z "$1" ]; then
   exit 0
 fi
 
-MOUNTPOINT=$1
+DRIVELETTER=$1
 
-
-sudo mkdir /mnt/$1
-sudo mount -t drvfs D: /mnt/d
+sudo mkdir -p /mnt/$1
+# sudo mount -t drvfs "$DRIVELETTER:" /mnt/$1
