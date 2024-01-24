@@ -12,7 +12,7 @@ if [ -z "$1" ]; then
   exit 0
 fi
 
-DRIVELETTER=$1
+DRIVELETTER=$(echo $1 | tr '[:lower:]' '[:upper:]')
 
 sudo mkdir -p /mnt/$1
 # sudo mount -t drvfs "$DRIVELETTER:" /mnt/$1
