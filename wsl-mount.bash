@@ -14,5 +14,6 @@ fi
 
 DRIVELETTER=$(echo $1 | tr '[:lower:]' '[:upper:]')
 
+echo $DRIVELETTER
 sudo mkdir -p /mnt/$1
 # sudo mount -t drvfs "$DRIVELETTER:" /mnt/$1
