@@ -15,8 +15,9 @@ fi
 DRIVELETTER=$(echo $1 | tr '[:lower:]' '[:upper:]')
 
 if mountpoint -q /mnt/$1; then
-  echo "$1 is already mounted."
+  echo "/mnt/$1 is already mounted."
 else
   sudo mkdir -p /mnt/$1
   sudo mount -t drvfs "$DRIVELETTER:" /mnt/$1
+  echo "$1 has been mounted at /mnt/$1." 
 fi
