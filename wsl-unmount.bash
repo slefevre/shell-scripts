@@ -14,5 +14,5 @@ fi
 
 DRIVELETTER=$(echo $1 | tr '[:lower:]' '[:upper:]')
 
-sudo unmount /mnt/$1
+sudo umount /mnt/$1
 sudo rmdir /mnt/$1
