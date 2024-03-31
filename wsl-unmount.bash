@@ -15,7 +15,8 @@ fi
 DRIVELETTER=$(echo $1 | tr '[:lower:]' '[:upper:]')
 
 if mountpoint -q /mnt/$1; then
-  if sudo umount -vvv /mnt/$1 && sudo rmdir /mnt/$1; then 
+  if sudo umount -vvv /mnt/$1 && sudo rmdir /mnt/$1; then
+    true
   else
     echo "Error unmounting /mnt/$1"
     exit -1
