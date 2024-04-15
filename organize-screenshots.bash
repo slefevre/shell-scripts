@@ -1,5 +1,7 @@
 #!/bin/bash
-for f in ./*.jpg
+for SCREENSHOT in ./*.jpg
 do
-  echo "found $f"
+  SUBSTRING="${SCREENSHOT##*_}"
+  DIR="$(basename $SUBSTRING .jpg)"
+  echo "found $DIR $SUBSTRING"
 done
