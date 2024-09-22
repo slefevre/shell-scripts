@@ -1,10 +1,35 @@
 #!/bin/bash
 
+##########
+# Switches
+##########
+
 # Exit on error
 set -e
 
 # Echo commands
 set -x
+
+###########
+# VARIABLES
+###########
+
+MYVARIABLE="Jeff"
+
+echo "${MYVARIABLE}"
+
+# Script arguments
+echo "${1}"
+
+# store command output
+PROJECTNAME="$(git rev-parse --show-toplevel | xargs basename)"
+
+# Concatenation
+ARCHIVENAME="${PROJECTNAME}-${1}"
+
+##############
+# CONDITIONALS
+##############
 
 # if statements
 if [[ *test-goes-here* ]] ; then
