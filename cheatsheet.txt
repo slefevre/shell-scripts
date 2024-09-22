@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Exit on error
-set e
+set -e
 
 # Echo commands
-set x
+set -x
 
 # if statements
 if [[ *test-goes-here* ]] ; then
@@ -60,7 +60,7 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 # looping
-for f in $FILES; do 
+for f in $FILES; do
   echo "Processing $f file..."
   cat $f
 done
