@@ -22,4 +22,6 @@ $ARCHIVENAME="$1-$2"
 
 # git archive $2 --format=tar.gz --output=$1-$2.tar.gz --prefix="$1-$2/"
 
-echo 1;
+# git archive $1 --format=tar.gz --output=$ARCHIVENAME.tar.gz --prefix="$ARCHIVENAME/"
+
+exit 1;
