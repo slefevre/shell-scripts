@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Exit on error
-set e
+set -e
 
 # Echo commands
-set x
+set -x
 
 # exit on no arguments
 if [[ $# -eq 0 ]] ; then
