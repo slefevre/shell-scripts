@@ -13,7 +13,7 @@ if [[ $# -eq 0 ]] ; then
 fi
 
 # test emtpy argument
-if [ -z "$2" ]; then
+if [ -z "$1" ]; then
   echo "Please specify the commit to export."
   exit 0
 fi
