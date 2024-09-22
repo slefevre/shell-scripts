@@ -4,7 +4,7 @@
 set -e
 
 # Echo commands
-set -x
+# set -x
 
 # exit on no arguments
 if [[ $# -eq 0 ]] ; then
@@ -18,10 +18,11 @@ if [ -z "$1" ]; then
   exit 0
 fi
 
-$ARCHIVENAME="$1-$2"
+PROJECTNAME="$(git rev-parse --show-toplevel | xargs basename)"
+ARCHIVENAME="${PROJECTNAME}-${1}"
 
-# git archive $2 --format=tar.gz --output=$1-$2.tar.gz --prefix="$1-$2/"
+echo "Creating $ARCHIVENAME.tar.gz ...";
 
-# git archive $1 --format=tar.gz --output=$ARCHIVENAME.tar.gz --prefix="$ARCHIVENAME/"
+git archive $1 --format=tar.gz --output=${ARCHIVENAME}.tar.gz --prefix="${ARCHIVENAME}/"
 
 exit 1;
