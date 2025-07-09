@@ -1,5 +1,7 @@
 #!/bin/bash
 
-set x
+# show commands as they are executed
+set -x
 
-set e
+# die and exit on error
+set -e
