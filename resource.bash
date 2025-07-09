@@ -1,12 +1,16 @@
 #!/bin/bash
 
-set x
+set -e
 
-set e
-if [ -f "$HOME/.profile" ]; then
-  source  "$HOME/.profile"
+SOURCE="$HOME/.profile";
+
+if [ -f $SOURCE ]; then
+  echo "sourcing $SOURCE";
+  source  $SOURCE;
 fi
 
-if [ -f "$HOME/.bash_profile" ]; then
-  source "$HOME/.bash_profile" 
+SOURCE="$HOME/.bash_profile";
+if [ -f $SOURCE ]; then
+  echo "sourcing $SOURCE";
+  source  $SOURCE;
 fi
