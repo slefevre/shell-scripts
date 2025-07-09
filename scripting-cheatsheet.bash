@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Exit on error
-set e
+set -e
 
 # Echo commands
-set x
+set -x
 
 # if statements
 if [[ *test-goes-here* ]] ; then
